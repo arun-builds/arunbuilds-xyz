@@ -1,0 +1,56 @@
+---
+import "@fontsource/instrument-serif/400.css";
+import "@fontsource/instrument-serif/400-italic.css";
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/500.css";
+import "@fontsource/inter/600.css";
+import "../styles/global.css";
+import Navbar from "../components/Navbar.astro";
+
+interface Props {
+    title: string;
+    description?: string;
+}
+
+const { title, description = "Backend engineer building scalable systems, APIs and distributed infrastructure." } = Astro.props;
+
+const pageTitle = title === "Arun Prajapati — Backend Engineer" ? title : `${title} | Arun Prajapati`;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content={description} />
+        <meta name="author" content="Arun Prajapati" />
+
+
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="canonical" href={canonicalURL} />
+
+        <!-- Open Graph -->
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={description} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={canonicalURL} />
+
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={description} />
+
+        <title>{pageTitle}</title>
+    </head>
+
+    <body class="max-w-[720px] mx-auto px-6 py-8 sm:py-10 min-h-screen flex flex-col bg-cream text-charcoal">
+        <Navbar />
+        <slot />
+        <footer class="mt-auto pt-12 text-center text-xs text-light">
+            <p>© {new Date().getFullYear()} Arun Prajapati</p>
+        </footer>
+    </body>
+</html>

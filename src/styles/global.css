@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+/* ── Theme ────────────────────────────────────────────── */
+@theme {
+  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+  --color-cream: #FAF7F2;
+  --color-card: #FFFFFF;
+  --color-charcoal: #1a1a1a;
+  --color-muted: #6b6b6b;
+  --color-light: #9a9a9a;
+  --color-border: #e5e1db;
+  --color-border-hover: #c5c0b8;
+  --color-accent: #2563EB;
+  --color-accent-hover: #1d4ed8;
+  --color-pill-bg: #f5f2ed;
+  --color-pill-hover: #eeebe5;
+  --color-badge-bg: #eff6ff;
+  --color-badge-border: #bfdbfe;
+
+  --animate-pulse-dot: pulse-dot 2s ease-in-out infinite;
+}
+
+/* ── Base ─────────────────────────────────────────────── */
+html {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: var(--color-accent);
+}
+
+/* ── Keyframes ────────────────────────────────────────── */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
