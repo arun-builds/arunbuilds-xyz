@@ -9,7 +9,7 @@ const isBlogs = currentPath === "/blogs" || currentPath === "/blogs/";
         Arun Prajapati
     </a>
     <div class="flex items-center gap-1">
-        <a
+        <!-- <a
             href="/projects"
             class:list={[
                 "text-sm font-medium px-3.5 py-1.5 rounded-full transition-all duration-150",
@@ -19,14 +19,12 @@ const isBlogs = currentPath === "/blogs" || currentPath === "/blogs/";
             ]}
         >
             Projects
-        </a>
+        </a> -->
         <a
             href="/blogs"
             class:list={[
                 "text-sm font-medium px-3.5 py-1.5 rounded-full transition-all duration-150",
-                isBlogs
-                    ? "text-charcoal bg-pill-bg border border-border"
-                    : "text-muted hover:text-charcoal hover:bg-pill-bg",
+                isBlogs ? "text-charcoal" : "text-muted hover:text-charcoal ",
             ]}
         >
             Blogs

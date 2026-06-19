@@ -12,12 +12,12 @@
   --color-light: #9a9a9a;
   --color-border: #e5e1db;
   --color-border-hover: #c5c0b8;
-  --color-accent: #2563EB;
-  --color-accent-hover: #1d4ed8;
+  --color-accent: #DC2626;
+  --color-accent-hover: #b91c1c;
   --color-pill-bg: #f5f2ed;
   --color-pill-hover: #eeebe5;
-  --color-badge-bg: #eff6ff;
-  --color-badge-border: #bfdbfe;
+  --color-badge-bg: #fef2f2;
+  --color-badge-border: #fecaca;
 
   --animate-pulse-dot: pulse-dot 2s ease-in-out infinite;
 }

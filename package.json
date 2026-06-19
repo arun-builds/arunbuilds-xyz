@@ -17,6 +17,11 @@
     "@fontsource/inter": "^5.2.8",
     "@tailwindcss/vite": "^4.3.1",
     "astro": "^6.4.7",
+    "github-calendar": "^2.3.4",
     "tailwindcss": "^4.3.1"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.9",
+    "typescript": "^6.0.3"
   }
 }

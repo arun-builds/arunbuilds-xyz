@@ -1,7 +1,43 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const posts = await getCollection("blog");
+
+posts.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
 ---
 
-<BaseLayout title="Blogs" description="Read my thoughts, tutorials, and articles on software engineering and backend development.">
-    <h1 class="text-3xl font-bold">Blog</h1>
+<BaseLayout title="Blog">
+    <ul class="mt-8 space-y-3">
+        {
+            posts.map((post) => (
+                <li class="flex items-center justify-between gap-3 group">
+                    <div class="flex items-center gap-2 min-w-0">
+                        <svg
+                            class="shrink-0 text-muted"
+                            width="6"
+                            height="6"
+                            viewBox="0 0 6 6"
+                            fill="currentColor"
+                        >
+                            <circle cx="3" cy="3" r="3" />
+                        </svg>
+                        <a
+                            href={`/blog/${post.id}`}
+                            class="font-medium truncate group-hover:text-accent transition-colors duration-150"
+                        >
+                            {post.data.title}
+                        </a>
+                    </div>
+                    <span class="text-sm text-muted shrink-0">
+                        {post.data.pubDate.toLocaleDateString("en-US", {
+                            year: "numeric",
+                            month: "short",
+                            day: "numeric",
+                        })}
+                    </span>
+                </li>
+            ))
+        }
+    </ul>
 </BaseLayout>
