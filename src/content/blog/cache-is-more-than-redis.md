@@ -16,7 +16,7 @@ Most developers are familiar with caching using Redis. Let's look at some cachin
 
 ## Database Materialized Views
 
-This is a concept that most junior backend developers (including me) either never stumble upon, don't know about, or simply ignore.
+This is a concept that most junior developers either never stumble upon, don't know about, or simply ignore.
 
 But it's such a powerful optimization technique.
 
