@@ -1,5 +1,45 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import ProjectList from "../components/ProjectList.astro";
+import { projects } from "../data/projects";
+
+const techStack = [
+    {
+        label: "Languages",
+        items: ["Go", "TypeScript", "SQL"],
+    },
+    {
+        label: "Backend & Systems",
+        items: [
+            "Microservices",
+            "Event-Driven",
+            "Gin",
+            "WebSockets",
+            "REST",
+            "TCP/HTTP",
+            "Concurrency",
+        ],
+    },
+    {
+        label: "Databases & Messaging",
+        items: [
+            "PostgreSQL",
+            "TimescaleDB",
+            "Redis",
+            "Redis Streams",
+            "sqlc",
+            "Goose",
+        ],
+    },
+    {
+        label: "Frontend",
+        items: ["React", "Next.js", "React Flow", "Tailwind CSS"],
+    },
+    {
+        label: "DevOps & Observability",
+        items: ["Docker", "Docker Compose", "Prometheus", "Grafana", "Linux", "Git"],
+    },
+];
 ---
 
 <BaseLayout title="Arun Prajapati">
@@ -138,94 +178,54 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                 Tech Stack
             </h2>
 
-            <div
-                class="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-4"
-            >
-                <!-- Languages -->
-                <div>
-                    <p class="text-xs text-light mb-2 font-medium">Languages</p>
-                    <div class="flex flex-wrap gap-1.5">
-                        <span
-                            class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-pill-bg border border-border rounded-md text-[0.8125rem] font-medium text-charcoal transition-all duration-150 hover:border-border-hover hover:bg-pill-hover cursor-default"
-                            >Go</span
-                        >
-                        <span
-                            class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-pill-bg border border-border rounded-md text-[0.8125rem] font-medium text-charcoal transition-all duration-150 hover:border-border-hover hover:bg-pill-hover cursor-default"
-                            >TypeScript</span
-                        >
-                        <span
-                            class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-pill-bg border border-border rounded-md text-[0.8125rem] font-medium text-charcoal transition-all duration-150 hover:border-border-hover hover:bg-pill-hover cursor-default"
-                            >JavaScript</span
-                        >
-                        <span
-                            class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-pill-bg border border-border rounded-md text-[0.8125rem] font-medium text-charcoal transition-all duration-150 hover:border-border-hover hover:bg-pill-hover cursor-default"
-                            >Python</span
-                        >
-                    </div>
-                </div>
-
-                <!-- Backend -->
-                <div>
-                    <p class="text-xs text-light mb-2 font-medium">Backend</p>
-                    <div class="flex flex-wrap gap-1.5">
-                        <span
-                            class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-pill-bg border border-border rounded-md text-[0.8125rem] font-medium text-charcoal transition-all duration-150 hover:border-border-hover hover:bg-pill-hover cursor-default"
-                            >REST APIs</span
-                        >
-                        <span
-                            class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-pill-bg border border-border rounded-md text-[0.8125rem] font-medium text-charcoal transition-all duration-150 hover:border-border-hover hover:bg-pill-hover cursor-default"
-                            >WebSockets</span
-                        >
-                        <span
-                            class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-pill-bg border border-border rounded-md text-[0.8125rem] font-medium text-charcoal transition-all duration-150 hover:border-border-hover hover:bg-pill-hover cursor-default"
-                            >gRPC</span
-                        >
-                        <span
-                            class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-pill-bg border border-border rounded-md text-[0.8125rem] font-medium text-charcoal transition-all duration-150 hover:border-border-hover hover:bg-pill-hover cursor-default"
-                            >Microservices</span
-                        >
-                        <span
-                            class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-pill-bg border border-border rounded-md text-[0.8125rem] font-medium text-charcoal transition-all duration-150 hover:border-border-hover hover:bg-pill-hover cursor-default"
-                            >Event-Driven</span
-                        >
-                    </div>
-                </div>
-
-                <!-- Databases -->
-                <div>
-                    <p class="text-xs text-light mb-2 font-medium">Databases</p>
-                    <div class="flex flex-wrap gap-1.5">
-                        <span
-                            class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-pill-bg border border-border rounded-md text-[0.8125rem] font-medium text-charcoal transition-all duration-150 hover:border-border-hover hover:bg-pill-hover cursor-default"
-                            >PostgreSQL</span
-                        >
-                        <span
-                            class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-pill-bg border border-border rounded-md text-[0.8125rem] font-medium text-charcoal transition-all duration-150 hover:border-border-hover hover:bg-pill-hover cursor-default"
-                            >Redis</span
-                        >
-                        <span
-                            class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-pill-bg border border-border rounded-md text-[0.8125rem] font-medium text-charcoal transition-all duration-150 hover:border-border-hover hover:bg-pill-hover cursor-default"
-                            >Drizzle</span
-                        >
-                    </div>
-                </div>
-
-                <!-- Devops -->
-                <div>
-                    <p class="text-xs text-light mb-2 font-medium">Devops</p>
-                    <div class="flex flex-wrap gap-1.5">
-                        <span
-                            class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-pill-bg border border-border rounded-md text-[0.8125rem] font-medium text-charcoal transition-all duration-150 hover:border-border-hover hover:bg-pill-hover cursor-default"
-                            >Docker</span
-                        >
-                        <span
-                            class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-pill-bg border border-border rounded-md text-[0.8125rem] font-medium text-charcoal transition-all duration-150 hover:border-border-hover hover:bg-pill-hover cursor-default"
-                            >Azure</span
-                        >
-                    </div>
-                </div>
+            <div class="flex flex-col gap-3">
+                {
+                    techStack.map((category) => (
+                        <div class="flex flex-col gap-1.5 sm:flex-row sm:items-baseline sm:gap-4">
+                            <p class="text-xs text-light font-medium sm:w-36 shrink-0">
+                                {category.label}
+                            </p>
+                            <p class="text-[0.8125rem] text-charcoal font-medium leading-relaxed">
+                                {category.items.join(", ")}
+                            </p>
+                        </div>
+                    ))
+                }
             </div>
         </section>
+
+        <!-- ── Projects ────────────────────────────────────── -->
+        <section class="mt-10" id="projects">
+            <div class="flex items-center justify-between gap-3 mb-4">
+                <h2
+                    class="text-xs font-semibold uppercase tracking-widest text-muted"
+                >
+                    Projects
+                </h2>
+
+                <a
+                    href="/projects"
+                    class="inline-flex items-center gap-1 text-xs font-medium text-muted transition-all duration-200 hover:text-accent hover:gap-1.5"
+                >
+                    View all
+                    <svg
+                        class="w-3 h-3"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <path d="M5 12h14"></path>
+                        <path d="m12 5 7 7-7 7"></path>
+                    </svg>
+                </a>
+            </div>
+
+            <ProjectList projects={projects} />
+        </section>
+
 
         <section class="mt-10" id="writing">
             <h2

@@ -1,7 +1,18 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import ProjectList from "../components/ProjectList.astro";
+import { projects } from "../data/projects";
 ---
 
 <BaseLayout title="Projects" description="A collection of my open-source projects, side projects, and tools.">
     <h1 class="text-3xl font-bold">Projects</h1>
+
+    <p class="mt-2 max-w-xl text-muted text-[0.9375rem] leading-relaxed">
+        Open-source systems I've built while exploring backend engineering,
+        distributed systems, and the internals of the tools we use every day.
+    </p>
+
+    <section class="mt-6">
+        <ProjectList projects={projects} detailed />
+    </section>
 </BaseLayout>
